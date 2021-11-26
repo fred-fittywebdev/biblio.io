@@ -35,29 +35,24 @@ for (let i = 0; i < livres.length; i++) {
 }
 
 function ajouterFormulaire() {
-    if(!document.querySelector('#monForm')) {
-        let formulaire = document.createElement("form")
-        formulaire.setAttribute("id", "monForm")
-        formulaire.innerHTML = `
-        <fieldset class="mt-2">
-        <legend>Ajout d'un livre</legend>
-            <div class="my-3">
-                <label for="titre" class="form-label">Titre</label>
-                <input type="text" class="form-control" id="titre">
-            </div>
-            <div class="mb-3">
-                <label for="auteur" class="form-label">Auteur</label>
-                <input type="text" class="form-control" id="auteur">
-            </div>
-            <div class="mb-3">
-                <label for="pages" class="form-label">Pages</label>
-                <input type="number" class="form-control" id="pages">
-            </div>
-            <button type="submit" class="btn btn-primary">Ajouter</button>
-        </fieldset>
-        `
-        document.querySelector('.container').appendChild(formulaire)
-    }
+    document.querySelector('#formAjout').removeAttribute("class")
+}
 
+document.querySelector('#validationAjout').addEventListener('click', function(e) {
+    e.preventDefault()
+    let titre = document.querySelector('#formAjout #titre').value
+    let auteur = document.querySelector('#formAjout #auteur').value
+    let pages = document.querySelector('#formAjout #pages').value
+    ajoutLivre(titre, auteur, pages)
+})
+
+function ajoutLivre(titre, auteur, pages) {
+    let livre = {
+        "Nom": titre,
+        "Auteur": auteur,
+        "Pages": pages
+    }
+    livres.push(livre)
+    console.log(livres)
 }
 

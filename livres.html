@@ -39,6 +39,24 @@
             </table>
             <button onclick="ajouterFormulaire()" class="btn btn-success w-100">Ajouter</button>
         </div>
+        <form id="formAjout" class="d-none" action="">
+            <fieldset class="mt-2">
+                <legend>Ajout d'un livre</legend>
+                    <div class="my-3">
+                        <label for="titre" class="form-label">Titre</label>
+                        <input type="text" class="form-control" id="titre">
+                    </div>
+                    <div class="mb-3">
+                        <label for="auteur" class="form-label">Auteur</label>
+                        <input type="text" class="form-control" id="auteur">
+                    </div>
+                    <div class="mb-3">
+                        <label for="pages" class="form-label">Pages</label>
+                        <input type="number" class="form-control" id="pages">
+                    </div>
+                    <button id="validationAjout" class="btn btn-primary">Ajouter</button>
+                </fieldset>
+        </form>
     </div>
     <script src="js/main.js"></script>
 </body>
