@@ -30,12 +30,15 @@
         <h1 class="border border-dark m-2 p-2 rounded text-center p_bgColorBlue text-white"">Page listant les livres</h1>
         <div>
             <table class="table text-center monTableau" id="tableauLivres">
-                <tr class="table-dark">
-                    <th>Titre</th>
-                    <th>Auteur</th>
-                    <th>Nombre de pages</th>
-                    <th colspan="2">Actions</th>
-                </tr>
+                <thead>
+                    <tr class="table-dark">
+                        <th>Titre</th>
+                        <th>Auteur</th>
+                        <th>Nombre de pages</th>
+                        <th colspan="2">Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
             </table>
             <button onclick="ajouterFormulaire()" class="btn btn-success w-100">Ajouter</button>
         </div>
@@ -55,6 +58,25 @@
                         <input type="number" class="form-control" id="pages">
                     </div>
                     <button id="validationAjout" class="btn btn-primary">Ajouter</button>
+                </fieldset>
+        </form>
+        <form id="modifLivre" class="d-none" action="">
+            <fieldset class="mt-2">
+                <legend>Modification d'un livre</legend>
+                    <div class="my-3">
+                        <label for="titre" class="form-label">Titre</label>
+                        <input type="text" class="form-control" id="titre">
+                    </div>
+                    <div class="mb-3">
+                        <label for="auteur" class="form-label">Auteur</label>
+                        <input type="text" class="form-control" id="auteur">
+                    </div>
+                    <div class="mb-3">
+                        <label for="pages" class="form-label">Pages</label>
+                        <input type="number" class="form-control" id="pages">
+                    </div>
+                    <input type="hidden" id="identifiant" value="">
+                    <button id="validationModif" class="btn btn-primary">Modifier</button>
                 </fieldset>
         </form>
     </div>
