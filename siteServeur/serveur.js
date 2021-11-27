@@ -1,11 +1,14 @@
 let express = require("express")
 let server = express()
+let morgan = require("morgan")
+
+server.use(morgan("dev"))
 
 server.listen(8080)
 
 server.get('/', (requete, reponse) => {
-    console.log("Demande reçue sur la route / avec la méthode GET");
-    reponse.end('Demande GET reçue !')
+    console.log("Page d'accueil");
+    reponse.end('page d\'accueil !')
 })
 
 server.get('/test', (requete, reponse) => {
