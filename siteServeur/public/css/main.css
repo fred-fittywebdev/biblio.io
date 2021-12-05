@@ -1,0 +1,17 @@
+body {
+    color: #fff;
+    background-color: #212121;
+    font-family: 'Bubbler One', sans-serif;
+
+}
+
+table td{
+    color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fuzzy Bubbles', cursive;
+}
+.p_boredrBlue {
+    background-color: #0079d9;
+}

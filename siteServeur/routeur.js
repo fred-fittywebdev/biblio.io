@@ -7,15 +7,16 @@ routeur.get('/', (requete, reponse) => {
     reponse.render("accueil.html.twig")
 })
 
-routeur.get('/test', (requete, reponse) => {
-    console.log("Demande reçue sur la route /test avec la méthode GET");
-    reponse.end('Demande GET reçue !')
+routeur.get('/livres', (requete, reponse) => {
+    reponse.render('livres/liste.html.twig')
 })
 
-routeur.post('/test', (requete, reponse) => {
-    console.log("Demande reçue sur la route /test avec la méthode POST");
-    reponse.end('Demande POST reçue !')
+routeur.get('/livres/:nom', (requete, reponse) => {
+    console.log(requete.params.nom)
+    // on revnoie l'info récupéré en paramètre dans le template avec {}
+    reponse.render('livres/livre.html.twig', {nom:requete.params.nom})
 })
+
 
 // on crée une route poue l'erreur 404
 routeur.use((requete, reponse, suite) => {

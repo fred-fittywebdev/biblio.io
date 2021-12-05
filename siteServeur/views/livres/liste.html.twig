@@ -1,0 +1,47 @@
+{% extends "base.html.twig" %}
+
+{% block titre %} Les livres de la bibliothèque {% endblock %} 
+
+{% block contenu %}
+    <table class="table text-center monTableau" id="tableauLivres">
+        <thead>
+            <tr class="table-dark">
+                <th>Titre</th>
+                <th>Auteur</th>
+                <th>Nombre de pages</th>
+                <th colspan="2">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><a href="/livres/Le seigneur des anneaux">Le seigneur des anneaux</a></td>
+            <td>Tolkien</td>
+            <td>1000</td>
+            <td><a href="" class="btn btn-warning">Modifier</a></td>
+            <td><a href="" class="btn btn-danger">Supprimer</a></td>
+        </tr>
+        <tr>
+            <td><a href="/livres/Les enfants de Hurin">Les enfants de Hurin</a></td>
+            <td>Tolkien</td>
+            <td>410</td>
+            <td><a href="" class="btn btn-warning">Modifier</a></td>
+            <td><a href="" class="btn btn-danger">Supprimer</a></td>
+        </tr>
+        <tr>
+            <td><a href="/livres/LeBeren et Luthien">LeBeren et Luthien</a></td>
+            <td>Tolkien</td>
+            <td>664</td>
+            <td><a href="" class="btn btn-warning">Modifier</a></td>
+            <td><a href="" class="btn btn-danger">Supprimer</a></td>
+        </tr>
+        <tr>
+            <td><a href="/livres/Le Silmarillion">Le Silmarillion</a></td>
+            <td>Tolkien</td>
+            <td>2200</td>
+            <td><a href="" class="btn btn-warning">Modifier</a></td>
+            <td><a href="" class="btn btn-danger">Supprimer</a></td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="" class="btn btn-success d-block fw-bold">Ajouter un livre</a>
+{% endblock %}
