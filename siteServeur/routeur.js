@@ -2,19 +2,33 @@ let express = require("express")
 // on génère les routes grâce a la fonction express
 let routeur = express.Router()
 const twig = require('twig')
+const livreModel = require('./models/livre.models')
 
 routeur.get('/', (requete, reponse) => {
     reponse.render("accueil.html.twig")
 })
 
 routeur.get('/livres', (requete, reponse) => {
-    reponse.render('livres/liste.html.twig')
+    livreModel.find()
+        .exec()
+        .then(livres => {
+            reponse.render('livres/liste.html.twig', {livres: livres})
+        })
+        .catch()
+    
 })
 
-routeur.get('/livres/:nom', (requete, reponse) => {
-    console.log(requete.params.nom)
-    // on revnoie l'info récupéré en paramètre dans le template avec {}
-    reponse.render('livres/livre.html.twig', {nom:requete.params.nom})
+routeur.get('/livres/:id', (requete, reponse) => {
+    livreModel.findById(requete.params.id)
+    .exec()
+    .then(livre => {
+        // on revnoie l'info récupéré en paramètre dans le template avec {}
+        reponse.render('livres/livre.html.twig', {livre: livre})
+    })
+    .catch(error => {
+        console.log(error);
+    })
+
 })
 
 

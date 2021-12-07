@@ -13,7 +13,16 @@
             </tr>
         </thead>
         <tbody>
-        <tr>
+        {% for livre in livres %}
+            <tr>
+                <td><a href="/livres/{{ livre._id }}">{{ livre.nom }}</a></td>
+                <td>{{ livre.auteur }}</td>
+                <td>{{ livre.pages }}</td>
+                <td><a href="" class="btn btn-warning">Modifier</a></td>
+                <td><a href="" class="btn btn-danger">Supprimer</a></td>
+        </tr>
+        {% endfor %}
+        {# <tr>
             <td><a href="/livres/Le seigneur des anneaux">Le seigneur des anneaux</a></td>
             <td>Tolkien</td>
             <td>1000</td>
@@ -40,7 +49,7 @@
             <td>2200</td>
             <td><a href="" class="btn btn-warning">Modifier</a></td>
             <td><a href="" class="btn btn-danger">Supprimer</a></td>
-        </tr>
+        </tr> #}
         </tbody>
     </table>
     <a href="" class="btn btn-success d-block fw-bold">Ajouter un livre</a>
